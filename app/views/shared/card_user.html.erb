@@ -1,0 +1,14 @@
+<% if @users.nil? %>
+  <div class="card_content">
+    <p>対象となるユーザーが存在しておりません</p>
+  </div>
+<% else %>
+  <% @users.each do |user| %>
+    <div class="card_information">
+      <span class="user_icon">
+      </span>
+      <span class="user_name">
+      </span>
+    </div>
+  <% end %>
+<% end %>

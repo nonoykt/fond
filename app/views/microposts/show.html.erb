@@ -1,0 +1,35 @@
+<% provide(:title, "ポスト") %>
+<div class="container_Main">
+  <% if @micropost.nil? %>
+    <p>対象となるポストが存在しておりません</p>
+  <% else %>
+    <div class="card_content">
+      <div class="user_information">
+        <div class="user_icon">
+        </div>
+        <div class="user_name">
+        </div>
+      </div>
+      <div class="micropost_information">
+        <div class="micropost_image">
+        </div>
+        <div class="micropost_content">
+          <%= link_to micropost_path(id: @micropost.id), method: :get do %>
+            <%= @micropost.content %>
+          <% end %>
+        </div>
+        <div class="micropost_category">
+        </div>
+      </div>
+      <div class="action_items">
+        <span class="action">
+        </span>
+        <span class="action">
+        </span>
+        <span class="action">
+        </span>
+      </div>
+    </div>
+  <% end %>
+</div>
+
