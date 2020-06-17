@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: fond_production
-  username: fond
-  password: <%= ENV['FOND_DATABASE_PASSWORD'] %>
+  username: root
+  password: 

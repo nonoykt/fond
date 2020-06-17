@@ -5,7 +5,10 @@ ruby '2.6.3'
 gem 'devise'
 gem 'bootstrap'
 gem 'coffee-rails', '~> 4.2'
+gem 'did_you_mean', '~> 1.3.0'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'mysql2', '~> 0.5.3'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
@@ -14,10 +17,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'sprockets'
+gem 'scss'
 
-
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
