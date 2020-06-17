@@ -22,18 +22,25 @@ class MicropostsController < ApplicationController
   end
 
   def edit
+    @micropost = Micropost.find(params[:id])
   end
 
   def update
+    @micropost = Micropost.find(params[:id])
   end
 
   def destory
+    @micropost.delete
   end
 
   private
 
   def micropost_params
-    params.require(:micropost).permit(:content)
+    params.require(:micropost).permit(:content, :image)
+  end
+
+  def set_user
+    @micropost = Micropost.find(params[:id])
   end
 
 end

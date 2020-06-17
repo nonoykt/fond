@@ -30,6 +30,7 @@ ja:
       micropost:
         id: ID
         content: 内容
+        image: 画像
         created_at: 登録日時
         updated_at: 更新日時
       user:
@@ -174,7 +175,7 @@ ja:
     select:
       prompt: 選択してください
     submit:
-      create: 登録する
+      create: ポスト
       submit: 保存する
       update: 更新する
   number:

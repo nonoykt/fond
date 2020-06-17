@@ -13,4 +13,122 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+@import "bootstrap";
+
+// <--navbar-->
+header {
+  top                   : 0;
+  left                  : 0;
+  z-index               : 100;
+  padding-top           : 10px;
+  padding-bottom        : 10px;
+  background-color      : darkturquoise;
+  -webkit-border-radius : 0px 0px 0px 0px;
+  -moz-border-radius    : 0px 0px 0px 0px;
+  -ms-border-radius     : 0px 0px 0px 0px;
+  -o-border-radius      : 0px 0px 0px 0px;
+  border-radius         : 0px 0px 0px 0px;
+}
+
+.notification {
+  margin-right     : auto;
+  margin-left      : auto;
+  background-color : aquamarine;
+}
+
+footer {
+  background-color : darkturquoise;
+  nav.container {
+    width        : 80%;
+    margin-right : auto;
+    margin-left  : auto;
+  }
+}
+
+.container_Main {
+  width                 : 80%;
+  margin-right          : auto;
+  margin-left           : auto;
+  padding               : 20px 20px 20px 20px;
+  background-color      : mintcream;
+  -webkit-border-radius : 0px 0px 0px 0px;
+  -moz-border-radius    : 0px 0px 0px 0px;
+  -ms-border-radius     : 0px 0px 0px 0px;
+  -o-border-radius      : 0px 0px 0px 0px;
+  border-radius         : 0px 0px 0px 0px;
+  margin-top            : 20px;
+  margin-bottom         : 20px;
+}
+
+.card_content {
+  background-color      : lightblue;
+  -webkit-border-radius : 0px 0px 0px 0px;
+  -moz-border-radius    : 0px 0px 0px 0px;
+  -ms-border-radius     : 0px 0px 0px 0px;
+  -o-border-radius      : 0px 0px 0px 0px;
+  border-radius         : 0px 0px 0px 0px;
+  box-shadow            : 0 3px 6px #00000029;
+  margin-bottom         : 30px;
+  padding               : 50px;
+}
+
+.user_information {
+  .user_icon {
+    margin-right          : 10px;
+    font-size             : 1rem;
+    border                : 1px solid;
+    border-color          : gray;
+    box-shadow            : 0 3px 6px purple;
+    -webkit-border-radius : 40px 40px 40px 40px;
+    -moz-border-radius    : 40px 40px 40px 40px;
+    -ms-border-radius     : 40px 40px 40px 40px;
+    -o-border-radius      : 40px 40px 40px 40px;
+    border-radius         : 40px 40px 40px 40px;
+  }
+  .user_name {
+    font-size    : 1rem;
+    list-style   : none;
+    li {
+      margin-top : 10px;
+    }
+  }
+}
+
+.micropost_information {
+  .micropost_image {
+
+  }
+  .micropost_content {
+    color       : black;
+    font-size   : 1rem;
+    padding-top : 15px;
+  }
+}
+
+.micropost_form {
+  .form-text-area {
+    border          : 2px solid #00b3b3;
+  }
+  .button {
+    display         : inline-block;
+      border-radius : 5%;
+      font-size     : 1rem;
+      text-align    : center;
+      cursor        : pointer;
+      padding       : 5px 20px;
+      background    : #00b3b3;
+      color         : #ffffff;
+      line-height   : 1em;
+      transition    : .3s;
+      border        : 1px solid #00b3b3;
+    }
+    .button:hover {
+      box-shadow    : none;
+      color         : #00b3b3;
+      background    : #ffffff;
+    .btn_image {
+    }
+    .btn_submit {
+    }
+  }
+}
