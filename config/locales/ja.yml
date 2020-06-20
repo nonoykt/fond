@@ -38,6 +38,7 @@ ja:
         name: 名前
         email: "メールアドレス"
         password: "パスワード"
+        image: プロフィール画像
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
   date:

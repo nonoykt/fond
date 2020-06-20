@@ -7,7 +7,7 @@
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true, maxlength: "15", class: "form-input" %>
     </div>
-    
+
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
@@ -34,6 +34,17 @@
       <%= f.label :current_password %><i>をご記入ください</i><br />
       <%= f.password_field :current_password, autocomplete: "current-password", class: "form-input" %>
     </div>
+
+    <div class="field">
+      <% if @user.image? %>
+        <div class="user_image">
+          <% image_tag @user.image.url %>
+        </div>
+      <% end %>
+      <%= f.label :image %><br />
+      <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'button btn_image' %>
+      <%= f.hidden_field :image_cache, class: 'button btn_image' %>
+    </div><br>
 
     <div class="actions">
       <%= f.submit "Update" %>

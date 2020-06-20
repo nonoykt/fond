@@ -6,8 +6,18 @@
   <% @users.each do |user| %>
     <div class="card_information">
       <span class="user_icon">
+        <% if user.image? %>
+          <%= link_to user_path(id: user.id), method: :get do %>
+          <%= image_tag user.image.url, size: "80x80", class: 'user_image' %>
+          <% end %>
+        <% end %>
       </span>
       <span class="user_name">
+        <% if user.name? %>
+          <%= link_to user_path(id: user.id), method: :get do %>
+          <li><%= user.name %></li>
+          <% end %>
+        <% end %>
       </span>
     </div>
   <% end %>
