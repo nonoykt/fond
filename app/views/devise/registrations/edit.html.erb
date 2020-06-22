@@ -1,59 +1,58 @@
 <div class="container_Main">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>エディット</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, maxlength: "15", class: "form-input" %>
+      <%= f.label :username %><br />
+      <%= f.text_field :username, autofocus: true, autocomplete: "username", maxlength: "15", class: "form-input" %>
     </div>
+    <hr class="dashed">
+
+    <div class="field">
+    <% if @user.image? %>
+      <div class="user_image">
+        <% image_tag @user.image.url %>
+      </div>
+    <% end %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'button btn_image' %>
+    <%= f.hidden_field :image_cache, class: 'button btn_image' %>
+    </div><br>
+    <hr class="dashed">
 
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
     </div>
+    <hr class="dashed">
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
     <div class="field">
-      <%= f.label :password %>
-      <i>(変更希望の場合、
+      <i>パスワード変更希望の場合、
         <% if @minimum_password_length %>
-        <em><%= @minimum_password_length %><% end %>文字以上</em>でご記入ください)
+        <em><%= @minimum_password_length %><% end %>文字以上</em>でご記入ください
       </i><br />
+      <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
     <div class="field">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input" %>
     </div>
-
-    <div class="field">
-      <%= f.label :current_password %><i>をご記入ください</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-input" %>
-    </div>
-
-    <div class="field">
-      <% if @user.image? %>
-        <div class="user_image">
-          <% image_tag @user.image.url %>
-        </div>
-      <% end %>
-      <%= f.label :image %><br />
-      <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: 'button btn_image' %>
-      <%= f.hidden_field :image_cache, class: 'button btn_image' %>
-    </div><br>
+    <hr class="dashed">
 
     <div class="actions">
       <%= f.submit "Update" %>
     </div>
   <% end %>
+  <hr class="solid">
 
   <h3>Cancel my account</h3>
 
   <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-  <%= link_to "Back", :back %>
 </div>

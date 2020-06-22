@@ -1,0 +1,41 @@
+<nav class="side_navbar">
+  <button data-menu-toggle>FOND</button>
+  <div class="navbar-menu" id="menu">
+    <div class="navbar-menu-overlay" data-menu-toggle>
+      <div class="navbar-menu-body">
+        <ul class="navbar-link-list">
+          <li class="navbar-link-item">
+          </li>
+          <li class="navbar-link-item">
+            <%= link_to 'オールポスト', microposts_path, class: "navbar-link-item" %>
+          </li>
+          <li class="navbar-link-item">
+            <%= link_to 'ニューポスト', new_micropost_path %>
+          </li>
+          <li class="navbar-link-item">
+            <%= link_to 'オールユーザー', users_path %>
+          </li>
+          <% if user_signed_in? %>
+            <li class="navbar-link-item">
+              <%= link_to 'プロフィール', users_path %>
+            </li>
+            <li class="navbar-link-item">
+              <%= link_to 'エディット', edit_user_registration_path %>
+            </li>
+            <li class="navbar-link-item">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li class="navbar-link-item">
+              <%= link_to 'サインアップ', new_user_registration_path %>
+            </li>
+            <li class="navbar-link-item">
+              <%= link_to 'ログイン', new_user_session_path %>
+            </li>
+          <% end %>
+        </ul>
+        <button data-menu-toggle>CLOSE</button>
+      </div>
+    </div>
+  </div>
+</nav>

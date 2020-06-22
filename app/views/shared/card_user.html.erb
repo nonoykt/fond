@@ -12,10 +12,10 @@
           <% end %>
         <% end %>
       </span>
-      <span class="user_name">
-        <% if user.name? %>
+      <span class="user_username">
+        <% if user.username? %>
           <%= link_to user_path(id: user.id), method: :get do %>
-          <li><%= user.name %></li>
+          <li><%= user.username %></li>
           <% end %>
         <% end %>
       </span>
