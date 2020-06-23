@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def sign_in_required
+    unless user_signed_in?
+      redirect_to new_user_session_url, alert: 'ログインまたはアカウント登録してください'
+    end
+  end
+  
   def after_sign_out_path_for(resource_or_scope)
     root_path
   end

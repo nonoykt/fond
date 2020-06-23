@@ -1,4 +1,5 @@
 class MicropostsController < ApplicationController
+  before_action :sign_in_required, only: %i[ new create edit update destroy]
 
   def index
     @microposts = Micropost.all

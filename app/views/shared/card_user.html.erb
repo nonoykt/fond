@@ -4,19 +4,19 @@
   </div>
 <% else %>
   <% @users.each do |user| %>
-    <div class="card_information">
-      <span class="user_icon">
-        <% if user.image? %>
-          <%= link_to user_path(id: user.id), method: :get do %>
-          <%= image_tag user.image.url, size: "80x80", class: 'user_image' %>
+    <div class="card_content">
+      <div class="card_information">
+        <span class="user_icon">
+          <% if user.image? %>
+            <%= link_to user_path(id: user.id), method: :get do %>
+              <%= image_tag user.image.url, size: "80x80", class: 'user_image' %>
+            <% end %>
           <% end %>
-        <% end %>
-      </span>
-      <span class="user_username">
-        <%= link_to user_path(id: user.id), method: :get do %>
-          <li><%= user.username %></li>
-        <% end %>
-      </span>
+        </span>
+        <span class="user_username">
+          <li><%= link_to user.username, user_path(id: user.id) %></li>
+        </span>
+      </div>
     </div>
   <% end %>
 <% end %>
