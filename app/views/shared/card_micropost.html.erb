@@ -21,7 +21,8 @@
         </div>
       </div>
       <div class="action_items">
-        <span class="action">
+        <span class="action" id="like_action-<%= micropost.id %>">
+          <%= render partial: 'likes/like', locals: { micropost: micropost } %>
         </span>
         <span class="action">
         </span>

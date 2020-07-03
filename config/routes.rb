@@ -14,14 +14,23 @@ Rails.application.routes.draw do
     unlocks: 'users/unlocks',
     password: 'users/passwords'
   }
-  
+
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest'
     get 'sign_in', to: 'users/sessions#new'
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :users, only: %i[index show]
+  resources :users, only: %i[index show] do
+    member do
+      get :following, :followers
+    end
+    collection do
+      get :likes
+    end
+  end
 
   resources :microposts, only: %i[index show edit create destroy new]
+  post 'likes/:micropost_id/create', to: 'likes#create', constraints: { micropost_id: /\d+/ }, as: :likes_create
+  post 'likes/:micropost_id/delete', to: 'likes#destroy', constraints: { micropost_id: /\d+/ }, as: :likes_delete
 end

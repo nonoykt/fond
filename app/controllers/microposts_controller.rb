@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :sign_in_required, only: %i[ new create edit update destroy]
+  before_action :sign_in_required, only: %i[new create edit update destroy]
 
   def index
     @microposts = Micropost.all
@@ -14,11 +14,18 @@ class MicropostsController < ApplicationController
   end
 
   def create
-    @micropost = Micropost.new(micropost_params)
+    @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       redirect_to microposts_url, notice: "ポストしました"
     else
-      render :new
+      flash[:alert] = if @micropost.content.empty?
+        'ポスト内容を入力してください'
+      elsif @micropost.content.length > 140
+        'ポスト内容は140字以内で入力してください'
+      else
+        'ポストできませんでした'
+      end
+      redirect_to new_micropost_path(id: @micropost.id)
     end
   end
 

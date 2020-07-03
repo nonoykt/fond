@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <% if current_user.like?(micropost) %>
+    <%= button_to likes_delete_path(micropost_id: micropost.id), :method => :post, remote: true do %>
+      <i class="fas fa-heart">スキ</i>
+    <% end %>
+  <% else %>
+    <%= button_to likes_create_path(micropost_id: micropost.id), :method => :post, remote: true do %>
+      <i class="far fa-heart">スキ</i>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= button_to new_user_session_path, method: :get do %>
+    <i class="far fa-heart">スキ</i>
+  <% end %>
+<% end %>
